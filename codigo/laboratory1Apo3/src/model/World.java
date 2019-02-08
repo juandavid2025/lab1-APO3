@@ -2,6 +2,10 @@ package model;
 
 import java.util.Random;
 
+/**
+ * 
+ *
+ */
 public class World {
 
 	
@@ -9,7 +13,10 @@ public class World {
 		
 	}
 	
-	
+	/**
+	 * this method generate random coefficients in an random array size beetwen one to 10 grade 
+	 * @return coefficients - the array of random grade with random coefficients
+	 */
 	public int[] generateRandomPolynomial() {
 		
 		Random random = new Random();
