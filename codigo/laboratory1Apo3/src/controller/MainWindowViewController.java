@@ -7,39 +7,38 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import model.World;
 
 public class MainWindowViewController implements Initializable{
 
+	private World world;
 	
-	@FXML
-    private Button algorithm1Button;
+	 @FXML
+	    private Button randomPolynomialButton;
 
-    @FXML
-    private Button algorithm2Button;
+	    @FXML
+	    private Button newtonMethodButton;
 
-    @FXML
-    private Button getRootsButton;
+	    @FXML
+	    void newtonMethodClicked(ActionEvent event) {
 
-    @FXML
-    void algorithm1Clicked(ActionEvent event) {
+	    }
 
-    }
+	    @FXML
+	    void randomPolymialClicked(ActionEvent event) {
 
-    @FXML
-    void algorithm2Clicked(ActionEvent event) {
-
-    }
-
-    @FXML
-    void getRootsClicked(ActionEvent event) {
-
-    }
-	
-	
+	    	int [] coefficients = world.generateRandomPolynomial();
+	    	
+	    	int grade = coefficients.length;
+	    	
+	    	
+	    	
+	    }
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		
+		world = new World();
 		
 	}
 
