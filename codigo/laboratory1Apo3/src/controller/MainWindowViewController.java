@@ -7,11 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import model.World;
+import model.Calculator;
 
 public class MainWindowViewController implements Initializable{
 
-	private World world;
+	private Calculator world;
 	
 	 @FXML
 	    private Button randomPolynomialButton;
@@ -38,7 +38,7 @@ public class MainWindowViewController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		world = new World();
+		world = new Calculator();
 		
 	}
 

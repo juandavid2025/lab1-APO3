@@ -6,10 +6,10 @@ import java.util.Random;
  * 
  *
  */
-public class World {
+public class Calculator {
 
 	
-	public World() {
+	public Calculator() {
 		
 	}
 	
