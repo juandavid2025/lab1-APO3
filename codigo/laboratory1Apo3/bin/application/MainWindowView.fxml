@@ -2,98 +2,77 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowViewController">
-   <bottom>
-      <GridPane prefHeight="90.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="randomPolynomialButton" mnemonicParsing="false" onAction="#randomPolymialClicked" prefHeight="65.0" prefWidth="640.0" text="Generate Random Polynomial">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="640.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button fx:id="newtonMethodButton" mnemonicParsing="false" onAction="#newtonMethodClicked" prefHeight="69.0" prefWidth="640.0" text="Newton Method" GridPane.columnIndex="1">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="640.0" text="Button" GridPane.rowIndex="1">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-         </children>
-      </GridPane>
-   </bottom>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowViewController">
    <top>
-      <Pane prefHeight="110.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="86.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="118.0" prefWidth="1298.0" text="Roots of Polynomials" textAlignment="CENTER">
+            <Label alignment="TOP_CENTER" layoutX="55.0" layoutY="8.0" prefHeight="62.0" prefWidth="691.0" text="Raices de polinomios" textAlignment="CENTER">
                <font>
-                  <Font name="Tw Cen MT" size="80.0" />
+                  <Font name="Tw Cen MT" size="64.0" />
                </font>
             </Label>
          </children>
       </Pane>
    </top>
    <center>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="321.0" prefWidth="798.0" style="-fx-background-color: FFFFFF;">
                <children>
+                  <ImageView fitHeight="45.0" fitWidth="768.0" layoutX="24.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../Pictures/Captura.PNG" />
+                     </image>
+                  </ImageView>
                   <Label layoutX="568.0" layoutY="18.0" text="Polynomial input" AnchorPane.bottomAnchor="203.6" AnchorPane.leftAnchor="568.0" AnchorPane.rightAnchor="538.4000000000001" AnchorPane.topAnchor="18.000000000000007">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                   <TextField layoutX="80.0" layoutY="262.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="137.0" layoutY="262.0" prefHeight="23.0" prefWidth="51.0" text="x^10 +" />
-                   <TextField layoutX="188.0" layoutY="260.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="242.0" layoutY="260.0" prefHeight="23.0" prefWidth="45.0" text="x^9 +" />
-                   <TextField layoutX="290.0" layoutY="259.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="341.0" layoutY="259.0" prefHeight="23.0" prefWidth="48.0" text="x^8 +" />
-                   <TextField layoutX="395.0" layoutY="259.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="448.0" layoutY="259.0" prefHeight="23.0" prefWidth="46.0" text="x^7 +" />
-                   <TextField layoutX="495.0" layoutY="257.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="546.0" layoutY="257.0" prefHeight="23.0" prefWidth="48.0" text="x^6 +" />
-                   <TextField layoutX="597.0" layoutY="256.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="648.0" layoutY="256.0" prefHeight="23.0" prefWidth="48.0" text="x^5 +" />
-                   <TextField layoutX="697.0" layoutY="254.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="749.0" layoutY="254.0" prefHeight="23.0" prefWidth="47.0" text="x^4 +" />
-                   <TextField layoutX="796.0" layoutY="254.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="849.0" layoutY="254.0" prefHeight="23.0" prefWidth="46.0" text="x^3 +" />
+                   <TextField layoutX="30.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
                    <TextField layoutX="895.0" layoutY="254.0" prefHeight="26.0" prefWidth="50.0" />
                    <Label layoutX="948.0" layoutY="254.0" prefHeight="23.0" prefWidth="45.0" text="x^2 +" />
                    <TextField layoutX="994.0" layoutY="254.0" prefHeight="26.0" prefWidth="50.0" />
                    <Label layoutX="1046.0" layoutY="254.0" prefHeight="23.0" prefWidth="47.0" text="x^1 +" />
                    <TextField layoutX="1094.0" layoutY="254.0" prefHeight="26.0" prefWidth="50.0" />
-                   <Label layoutX="1146.0" layoutY="254.0" prefHeight="23.0" prefWidth="62.0" text="x^0 = 0" />
+                   <Label layoutX="1146.0" layoutY="254.0" prefHeight="15.0" prefWidth="20.0" text="x^0 = 0" />
+                  <TextField layoutX="735.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="600.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="250.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="673.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="527.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="321.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="461.0" layoutY="57.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="390.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="174.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <TextField layoutX="111.0" layoutY="58.0" prefHeight="20.0" prefWidth="35.0" />
+                  <Label layoutX="22.0" layoutY="30.0" text="Ingresa las constantes del polinomio:">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="36.0" layoutY="194.0" prefHeight="93.0" prefWidth="730.0" />
+                  <Label layoutX="30.0" layoutY="161.0" text="Estas son las raices del polinomio" />
+                  <Button layoutX="58.0" layoutY="339.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="118.0" text="NEWTON" />
+                  <Button layoutX="207.0" layoutY="339.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="119.0" text="MACHETAZO" />
+                  <Label layoutX="65.0" layoutY="312.0" text="Solucionar por el metodo:" />
+                  <Button layoutX="425.0" layoutY="342.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="127.0" text="ALEATORIO" />
+                  <Label layoutX="425.0" layoutY="312.0" text="Generar polinomio:" />
+                  <Separator layoutX="375.0" layoutY="293.0" orientation="VERTICAL" prefHeight="112.0" prefWidth="7.0" />
 
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
         </items>
       </SplitPane>
    </center>
