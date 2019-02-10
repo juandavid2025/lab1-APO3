@@ -10,8 +10,11 @@ import org.nfunk.jep.ParseException;
  * 
  *
  */
+
+
 public class Calculator {
 
+	private Polynomial polynomial;
 	
 	public Calculator() {
 		
@@ -65,7 +68,7 @@ public class Calculator {
 		Function.addStandardConstants();
 		Function.addComplex();
 		Function.setAllowUndeclared(true);
-		Function.setAllowAsspignment(true);
+		Function.setAllowAssignment(true);
 		Function.setImplicitMul(true);
 		Function.addStandardDiffRules();
 
