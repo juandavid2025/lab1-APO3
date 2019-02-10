@@ -65,7 +65,7 @@ public class Calculator {
 		Function.addStandardConstants();
 		Function.addComplex();
 		Function.setAllowUndeclared(true);
-		Function.setAllowAssignment(true);
+		Function.setAllowAsspignment(true);
 		Function.setImplicitMul(true);
 		Function.addStandardDiffRules();
 
