@@ -2,20 +2,37 @@ package model;
 import numbers.imaginary.CNumber;
 import numbers.imaginary.ComplexNumber;
 
+/**
+ * class Polynomial
+ */
 import java.util.Arrays;
 public class Polynomial {
 	private int grade;
     private double[] constants;
 
+    /**
+     * constructor of Polynomial
+     * @param grade - the grade of the polunomial
+     * @param constants - the coefficients of the polinomial
+     */
     public Polynomial(int grade, double ...constants){
         this.grade = grade;
         this.constants = constants;
     }
 
+    /**
+     * this method return the int grade 
+     * @return grade - the variable grade
+     */
     public int getGrade(){
         return grade;
     }
 
+    /**
+     * this method 
+     * @param number
+     * @return value - 
+     */
     public double realEvaluation(double number){
         double value = 0;
         for (int i = 0; i < constants.length; i++) {
