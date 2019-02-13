@@ -32,7 +32,7 @@
                <children>
                   <ImageView fitHeight="45.0" fitWidth="768.0" layoutX="24.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Pictures/Captura.PNG" />
+                        <Image url="@../../date/Captura.PNG" />
                      </image>
                   </ImageView>
                   <Label layoutX="568.0" layoutY="18.0" text="Polynomial input" AnchorPane.bottomAnchor="203.6" AnchorPane.leftAnchor="568.0" AnchorPane.rightAnchor="538.4000000000001" AnchorPane.topAnchor="18.000000000000007">
