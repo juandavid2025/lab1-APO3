@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="lib/ext-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/jep-2.4.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/git/lab1-APO3/codigo/laboratory1Apo3/libNumeric/RatioPlex.jar"/>
+	<classpathentry kind="lib" path="C:/Users/juand/Desktop/git lab1/lab1-APO3/codigo/laboratory1Apo3/libNumeric/RatioPlex.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

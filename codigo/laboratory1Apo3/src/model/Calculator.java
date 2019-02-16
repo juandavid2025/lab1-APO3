@@ -34,7 +34,7 @@ public class Calculator {
 		
 		for(int i=0;i<coefficients.length;i++) {
 			
-			coefficients[i]=1+random.nextInt(100);
+			coefficients[i]=1+random.nextInt(Integer.MAX_VALUE);
 			
 		}
 		
