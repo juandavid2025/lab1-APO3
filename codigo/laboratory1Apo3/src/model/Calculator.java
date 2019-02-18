@@ -19,6 +19,8 @@ public class Calculator {
 		
 	}
 	
+	
+	
 	/**
 	 * this method generate random coefficients in an random array size beetwen one to 10 grade 
 	 * @return coefficients - the array of random grade with random coefficients
@@ -43,7 +45,7 @@ public class Calculator {
 	}
 	
 	/*
-	 * iThis method calculate the roots of a polynomial.
+	 * iThis method calculate the roots of a polynomial with four figures of precision.
 	 * 
 	 * @param -function: is the polynomial to be evaluated.
 	 * 
@@ -62,6 +64,9 @@ public class Calculator {
 		double fx = 0;
 		double p = 0;
 		String derivative = "";
+		int iMax = 100;
+		int n = 0;
+		double Es = 0.5 - (int)(Math.pow(10, 3));
 
 		Function.addStandardFunctions();
 		Function.addStandardConstants();
@@ -83,7 +88,7 @@ public class Calculator {
 			e.printStackTrace();
 		}
 
-		while (cont == false) {
+		while (cont == false || n < iMax ) {
 
 			try {
 				// Solucion de la derivada
@@ -102,12 +107,13 @@ public class Calculator {
 			p = pZero - (fx / dx);
 			double error = (p - pZero) / p;
 
-			if (error <= 0.05) {
+			if (error <= Es) {
 				raiz = p;
 				cont = true;
 			} else {
 				pZero = p;
 			}
+			n++;
 		}
 
 		return raiz;
