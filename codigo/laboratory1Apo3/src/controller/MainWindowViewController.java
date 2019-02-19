@@ -74,56 +74,61 @@ public class MainWindowViewController implements Initializable{
 	    	
 	    	switch(n) {
 	    	
+	    		case 11:{
+	    		
+	    			gradeTenTextField.setText(""+coefficients[10]);
+	    			
+	    	}
 	    		case 10:{
 	    		
-	    			gradeTenTextField.setText(""+coefficients[9]);
+	    			gradeNineTextField.setText(""+coefficients[9]);
 	    			
 	    	}
 	    		case 9:{
 	    		
-	    			gradeNineTextField.setText(""+coefficients[8]);
+	    			gradeEightTextField.setText(""+coefficients[8]);
 	    			
 	    	}
 	    		case 8:{
-	    		
-	    			gradeEightTextField.setText(""+coefficients[7]);
+            	
+	    			gradeSeventTextField.setText(""+coefficients[7]);
 	    			
-	    	}
+            }
 	    		case 7:{
             	
-	    			gradeSeventTextField.setText(""+coefficients[6]);
+	    			gradeSixTextField.setText(""+coefficients[6]);
 	    			
             }
 	    		case 6:{
             	
-	    			gradeSixTextField.setText(""+coefficients[5]);
+	    			gradeFiveTextField.setText(""+coefficients[5]);
 	    			
             }
 	    		case 5:{
             	
-	    			gradeFiveTextField.setText(""+coefficients[4]);
+	    			gradeFourTextField.setText(""+coefficients[4]);
 	    			
             }
 	    		case 4:{
             	
-	    			gradeFourTextField.setText(""+coefficients[3]);
+	    			gradethreeTextField.setText(""+coefficients[3]);
 	    			
             }
 	    		case 3:{
             	
-	    			gradethreeTextField.setText(""+coefficients[2]);
+	    			gradeTwoTextField.setText(""+coefficients[2]);
 	    			
             }
 	    		case 2:{
             	
-	    			gradeTwoTextField.setText(""+coefficients[1]);
+	    			gradeOneTextField.setText(""+coefficients[1]);
 	    			
             }
 	    		case 1:{
-            	
-	    			gradeOneTextField.setText(""+coefficients[0]);
 	    			
-            }
+	    			constantTextField.setText(""+coefficients[0]);
+	    			
+	    		}
 	    	
 	      }
 	    	
