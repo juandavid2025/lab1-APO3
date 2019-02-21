@@ -25,7 +25,20 @@ class CalculatorTest {
 	
 	@Test
 	void setUpScene1() {
+		double[] gradeTenArray = new double[11];
+		double[] gradeNineArray = new double[10];			
+		double[] gradeEightArray = new double[9];
+		double[] gradeSeventArray = new double[8];
+		double[] gradeSixtArray = new double[7];
+		double[] gradeFiveArray = new double[6];
+		double[] gradeFourArray = new double[5];
+		double[] gradeThreeArray = new double[4];
+		double[] gradeTwoArray = new double[3];
+		double[] gradeOneArray = new double[2];
+		double[] gradeConstantArray = new double[1];
+		
 		calculator = new Calculator();
+		/*
 		polynomial10= new Polynimial();
 		polynomial9= new Polynimial();
 		polynomial8= new Polynimial();
@@ -37,6 +50,7 @@ class CalculatorTest {
 		polynomial2= new Polynimial();
 		polynomial1= new Polynimial();
 		polynomial0= new Polynimial();
+	*/
 	}
 
 	
