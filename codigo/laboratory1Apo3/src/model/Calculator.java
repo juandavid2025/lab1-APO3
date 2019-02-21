@@ -108,7 +108,7 @@ public class Calculator {
 			e.printStackTrace();
 		}
 
-		while (cont == false || n < iMax ) {
+		while (cont == false && n < iMax ) {
 
 			try {
 				// Solucion de la derivada
@@ -254,10 +254,6 @@ public class Calculator {
 				
 				double t = complexN[i].re() + total.re();
 				double s = complexN[i].im() + total.im();
-				total.set(t, s);
-				t = dComplex[i].re() + totalD.re();
-				s = dComplex[i].im() + totalD.im();
-				
 				totalD.set(t, s);
 			}
 
