@@ -65,7 +65,16 @@ public class MainWindowViewController implements Initializable{
 	    @FXML
 	    void newtonClicked(ActionEvent event) {
 
-	    	
+	    	try {
+		    	 int[] coefficients = getCoefficients();
+		    	 int grade = getGrade();
+		    	 
+		    	// Polynomial p1 = new Polynomial(grade,coefficients);
+		    	 
+		    	}
+		    	catch(Exception e) {
+		    		JOptionPane.showMessageDialog(null, "Please imput valid type of data");
+		    	}
 	    	
 	    }
 	    
@@ -133,102 +142,114 @@ public class MainWindowViewController implements Initializable{
 	    }
 	    
 	    public int[] getCoefficients() {
-	    	/*
-	    	try {
-	    	 getGrade();
-	    	}
-	    	catch(Exception e) {
-	    		JOptionPane.showMessageDialog(null, "Please imput valid type of data");
-	    	}
-	    	*/
-	    	int[] coefficients = new int[getGrade()+1];
 	    	
+	    	int[] coefficients = new int[getGrade()+1];
+	    	int position=0;
 	    	int grade=getGrade();
 	    	switch(grade){
 	    	
 	    	case 10:{
 	    		if(gradeTenTextField.getText()!=null) {
-	    			coefficients[10]=Integer.parseInt(gradeTenTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeTenTextField.getText());
+	    			position++;
 	    		 }
 	    		}
 	    	case 9:{
 	    		if(gradeNineTextField.getText()!=null) {
-	    			coefficients[9]=Integer.parseInt(gradeNineTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeNineTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[9]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 8:{
 	    		if(gradeEightTextField.getText()!=null) {
-	    			coefficients[8]=Integer.parseInt(gradeEightTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeEightTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[8]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 7:{
 	    		if(gradeSeventTextField.getText()!=null) {
-	    			coefficients[7]=Integer.parseInt(gradeSeventTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeSeventTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[7]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 6:{
 	    		if(gradeSixTextField.getText()!=null) {
-	    			coefficients[6]=Integer.parseInt(gradeSixTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeSixTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[6]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 5:{
 	    		if(gradeFiveTextField.getText()!=null) {
-	    			coefficients[5]=Integer.parseInt(gradeFiveTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeFiveTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[5]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 4:{
 	    		if(gradeFourTextField.getText()!=null) {
-	    			coefficients[4]=Integer.parseInt(gradeFourTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeFourTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[4]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 3:{
 	    		if(gradethreeTextField.getText()!=null) {
-	    			coefficients[3]=Integer.parseInt(gradethreeTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradethreeTextField.getText());
 	    		 }
 	    		else {
-	    			coefficients[3]=0;
+	    			coefficients[position]=0;
 	    		 }
 	    		}
 	    	case 2:{
 	    		if(gradeTwoTextField.getText()!=null) {
-	    			coefficients[2]=Integer.parseInt(gradeTwoTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeTwoTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[2]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 1:{
 	    		if(gradeOneTextField.getText()!=null) {
-	    			coefficients[1]=Integer.parseInt(gradeOneTextField.getText());
+	    			coefficients[position]=Integer.parseInt(gradeOneTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[1]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    		}
 	    	case 0:{
 	    		if(constantTextField.getText()!=null) {
-	    			coefficients[0]=Integer.parseInt(constantTextField.getText());
+	    			coefficients[position]=Integer.parseInt(constantTextField.getText());
+	    			position++;
 	    		 }
 	    		else {
-	    			coefficients[0]=0;
+	    			coefficients[position]=0;
+	    			position++;
 	    		 }
 	    	 }
 	    	}
