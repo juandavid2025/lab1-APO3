@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-/repNumbers/
-/model/
-=======
+/application/
 /controller/
->>>>>>> branch 'master' of https://github.com/juandavid2025/lab1-APO3
+/ext-1.1.1.jar
 /jUnit/
+/jep-2.4.1.jar
+/model/
+/repNumbers/
