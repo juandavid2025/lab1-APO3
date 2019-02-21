@@ -16,11 +16,17 @@ public class Calculator {
 
 	private Polynomial polynomial;
 	
-	public Calculator() {
-		
+	public Calculator(int grade, double ...constants) {
+		polynomial = new Polynomial(grade, constants);
 	}
 	
-	
+	public void methodNewton() {
+		
+		polynomial.getRootsNewton();
+	}
+	public void methodSintetic() {
+		polynomial.getRoots();
+	}
 	
 	/**
 	 * this method generate random coefficients in an random array size beetwen one to 10 grade 

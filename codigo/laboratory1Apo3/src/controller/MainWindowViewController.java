@@ -79,7 +79,7 @@ public class MainWindowViewController implements Initializable{
 		    	 
 		    	}
 		    	catch(Exception e) {
-		    		JOptionPane.showMessageDialog(null, "Please imput valid type of data");
+		    		JOptionPane.showMessageDialog(null, "Please input valid type of data");
 		    	}
 	    	
 	    }
@@ -363,7 +363,7 @@ public class MainWindowViewController implements Initializable{
 		    	 
 		    	}
 		    	catch(Exception e) {
-		    		JOptionPane.showMessageDialog(null, "Please imput valid type of data");
+		    		JOptionPane.showMessageDialog(null, "Please input valid type of data");
 		    	}
 	    	
 	    }
