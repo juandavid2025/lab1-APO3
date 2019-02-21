@@ -96,9 +96,10 @@ public class Polynomial {
             set.add(newtonComplexMethod());
         }
         for (ComplexNumber c: set ) {
-            System.out.println("x = " +c);
+            //System.out.println("x = " +c);
+        	roots += "x = " + c +"\n";
         }
-        System.out.println(getRootsNewton());
+        return roots;
     	
     }
 
@@ -145,17 +146,4 @@ public class Polynomial {
         return divisorsReturn;
     }
     
-    public static void main(String ...args){
-
-        Polynomial p1 = new Polynomial(2,16,8,1);
-        Set<ComplexNumber> set = new HashSet<>();
-        while (set.size() < p1.grade){
-            set.add(p1.newtonComplexMethod());
-        }
-        for (ComplexNumber c: set
-             ) {
-            System.out.println("x = " +c);
-        }
-        System.out.println(p1.getRoots());
-    }
 }
