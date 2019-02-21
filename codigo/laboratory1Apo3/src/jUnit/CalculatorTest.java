@@ -5,37 +5,38 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import model.Calculator;
+import model.Polynomial;
 
 class CalculatorTest {
 
 	Calculator calculator;
-	String polynomial10;
-	String polynomial9;
-	String polynomial8;
-	String polynomial7;
-	String polynomial6;
-	String polynomial5;
-	String polynomial4;
-	String polynomial3;
-	String polynomial2;
-	String polynomial1;
-	String polynomial0;
+	Polynomial polynomial10;
+	Polynomial polynomial9;
+	Polynomial polynomial8;
+	Polynomial polynomial7;
+	Polynomial polynomial6;
+	Polynomial polynomial5;
+	Polynomial polynomial4;
+	Polynomial polynomial3;
+	Polynomial polynomial2;
+	Polynomial polynomial1;
+	Polynomial polynomial0;
 	
 	
 	@Test
-	void scenario1() {
+	void setUpScene1() {
 		calculator = new Calculator();
-		polynomial10="10x^10+9x^9+8x^8+7x^7+6x^6+5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial9="9x^9+8x^8+7x^7+6x^6+5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial8="8x^8+7x^7+6x^6+5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial7="7x^7+6x^6+5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial6="6x^6+5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial5="5x^5+4x^4+3x^3+2x^2+x+10";
-		polynomial4="4x^4+3x^3+2x^2+x+10";
-		polynomial3="3x^3+2x^2+x+10";
-		polynomial2="2x^2+x+10";
-		polynomial1="x+10";
-		polynomial0="10";
+		polynomial10= new Polynimial();
+		polynomial9= new Polynimial();
+		polynomial8= new Polynimial();
+		polynomial7= new Polynimial();
+		polynomial6= new Polynimial();
+		polynomial5= new Polynimial();
+		polynomial4= new Polynimial();
+		polynomial3= new Polynimial();
+		polynomial2= new Polynimial();
+		polynomial1= new Polynimial();
+		polynomial0= new Polynimial();
 	}
 
 	
