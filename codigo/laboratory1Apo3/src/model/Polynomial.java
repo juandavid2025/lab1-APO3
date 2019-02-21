@@ -90,15 +90,15 @@ public class Polynomial {
     }
     
     public String getRootsNewton() {
+    	String roots = "";
     	Set<ComplexNumber> set = new HashSet<>();
-        while (set.size() < p1.grade){
-            set.add(p1.newtonComplexMethod());
+        while (set.size() < grade){
+            set.add(newtonComplexMethod());
         }
-        for (ComplexNumber c: set
-             ) {
+        for (ComplexNumber c: set ) {
             System.out.println("x = " +c);
         }
-        System.out.println(p1.getRoots());
+        System.out.println(getRootsNewton());
     	
     }
 
