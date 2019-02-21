@@ -67,9 +67,11 @@ public class MainWindowViewController implements Initializable{
 	    void newtonClicked(ActionEvent event) {
 
 	    	try {
+	    		
 		    	 double[] coefficients = getCoefficients();
 		    	 int grade = getGrade();
-		    	 
+		    	// System.out.println(""+grade);
+		    	// System.out.println(""+coefficients[0]+coefficients[grade-1]);
 		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
 		    	 
 		    	 world.setPolynomial(p1);
@@ -84,71 +86,94 @@ public class MainWindowViewController implements Initializable{
 	    	
 	    }
 	    
+	    public void cleanBoxes() {
+	    
+	    	gradeTenTextField.setText("");
+	    	gradeNineTextField.setText("");
+	    	gradeEightTextField.setText("");
+	    	gradeSeventTextField.setText("");
+	    	gradeSixTextField.setText("");
+	    	gradeFiveTextField.setText("");
+	    	gradeFourTextField.setText("");
+	    	gradethreeTextField.setText("");
+	    	gradeTwoTextField.setText("");
+	    	gradeOneTextField.setText("");
+	    	constantTextField.setText("");
+	    
+	    }
 	    
 	    public int getGrade() {
 	    	int grade=0;
 	    	
-	    	    if(gradeTenTextField.getText()!=null) {
+	    	//System.out.println(gradeTenTextField.getText()!=null);
+	    	//System.out.println(!(gradeTenTextField.getText().equals("")));
+	    	
+	    	    if(gradeTenTextField.getText()!=null && !(gradeTenTextField.getText().equals(""))) {
 	    		    if(Integer.parseInt(gradeTenTextField.getText())!=0) {
 	    			grade=10;
-	    		}
-	    		else if(gradeNineTextField.getText()!=null) {
+	    			
+	    		 }
+	    	    }
+	    		else if(gradeNineTextField.getText()!=null && !(gradeNineTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeNineTextField.getText())!=0) {
 		    			grade=9;
+		    			
 		    		}
 	    		}
-	    		else if(gradeEightTextField.getText()!=null) {
+	    		else if(gradeEightTextField.getText()!=null && !(gradeEightTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeEightTextField.getText())!=0) {
 		    			grade=8;
+		    			
 		    		}
 	    		}
-	    		else if(gradeSeventTextField.getText()!=null) {
+	    		else if(gradeSeventTextField.getText()!=null && !(gradeSeventTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeSeventTextField.getText())!=0) {
 		    			grade=7;
+		    			
 		    		}
 	    		}
-	    		else if(gradeSixTextField.getText()!=null) {
+	    		else if(gradeSixTextField.getText()!=null && !(gradeSixTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeSixTextField.getText())!=0) {
 		    			grade=6;
 		    		}
 	    		}
-	    		else if(gradeFiveTextField.getText()!=null) {
+	    		else if(gradeFiveTextField.getText()!=null && !(gradeFiveTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeFiveTextField.getText())!=0) {
 		    			grade=5;
 		    		}
 	    		}
-	    		else if(gradeFourTextField.getText()!=null) {
+	    		else if(gradeFourTextField.getText()!=null && !(gradeFourTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeFourTextField.getText())!=0) {
 		    			grade=4;
 		    		}
 	    		}
-	    		else if(gradethreeTextField.getText()!=null) {
+	    		else if(gradethreeTextField.getText()!=null && !(gradethreeTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradethreeTextField.getText())!=0) {
 		    			grade=3;
 		    		}
 	    		}
-	    		else if(gradeTwoTextField.getText()!=null) {
+	    		else if(gradeTwoTextField.getText()!=null && !(gradeTwoTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeTwoTextField.getText())!=0) {
 		    			grade=2;
 		    		}
 	    		}
-	    		else if(gradeOneTextField.getText()!=null) {
+	    		else if(gradeOneTextField.getText()!=null && !(gradeOneTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(gradeOneTextField.getText())!=0) {
 		    			grade=1;
 		    		}
 	    		}
-	    		else if(constantTextField.getText()!=null) {
+	    		else if(constantTextField.getText()!=null && !(constantTextField.getText().equals(""))) {
 	    			if(Integer.parseInt(constantTextField.getText())!=0) {
 		    			grade=0;
 		    		}
 	    		}
-	    	}
-	    	
-	    	return grade;
+	    	    return grade;
 	    }
+	    	
+	    	
+	    
 	    
 	    public double[] getCoefficients() {
-	    	
 	    	double[] coefficients = new double[getGrade()+1];
 	    	int position=0;
 	    	int grade=getGrade();
@@ -161,7 +186,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 9:{
-	    		if(gradeNineTextField.getText()!=null) {
+	    		if(gradeNineTextField.getText()!=null && !(gradeNineTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeNineTextField.getText());
 	    			position++;
 	    		 }
@@ -171,7 +196,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 8:{
-	    		if(gradeEightTextField.getText()!=null) {
+	    		if(gradeEightTextField.getText()!=null && !(gradeEightTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeEightTextField.getText());
 	    			position++;
 	    		 }
@@ -181,7 +206,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 7:{
-	    		if(gradeSeventTextField.getText()!=null) {
+	    		if(gradeSeventTextField.getText()!=null && !(gradeSeventTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeSeventTextField.getText());
 	    			position++;
 	    		 }
@@ -191,7 +216,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 6:{
-	    		if(gradeSixTextField.getText()!=null) {
+	    		if(gradeSixTextField.getText()!=null && !(gradeSixTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeSixTextField.getText());
 	    			position++;
 	    		 }
@@ -201,7 +226,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 5:{
-	    		if(gradeFiveTextField.getText()!=null) {
+	    		if(gradeFiveTextField.getText()!=null && !(gradeFiveTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeFiveTextField.getText());
 	    			position++;
 	    		 }
@@ -211,7 +236,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 4:{
-	    		if(gradeFourTextField.getText()!=null) {
+	    		if(gradeFourTextField.getText()!=null && !(gradeFourTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeFourTextField.getText());
 	    			position++;
 	    		 }
@@ -221,7 +246,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 3:{
-	    		if(gradethreeTextField.getText()!=null) {
+	    		if(gradethreeTextField.getText()!=null && !(gradethreeTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradethreeTextField.getText());
 	    		 }
 	    		else {
@@ -229,7 +254,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 2:{
-	    		if(gradeTwoTextField.getText()!=null) {
+	    		if(gradeTwoTextField.getText()!=null && !(gradeTwoTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeTwoTextField.getText());
 	    			position++;
 	    		 }
@@ -239,7 +264,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 1:{
-	    		if(gradeOneTextField.getText()!=null) {
+	    		if(gradeOneTextField.getText()!=null && !(gradeOneTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(gradeOneTextField.getText());
 	    			position++;
 	    		 }
@@ -249,7 +274,7 @@ public class MainWindowViewController implements Initializable{
 	    		 }
 	    		}
 	    	case 0:{
-	    		if(constantTextField.getText()!=null) {
+	    		if(constantTextField.getText()!=null && !(constantTextField.getText().equals(""))) {
 	    			coefficients[position]=Integer.parseInt(constantTextField.getText());
 	    			position++;
 	    		 }
@@ -281,6 +306,8 @@ public class MainWindowViewController implements Initializable{
 	    @FXML
 	    void ramdomClicked(ActionEvent event) {
            
+	    	cleanBoxes();
+	    	
 	    	int[] coefficients = world.generateRandomPolynomial();
 	    	
 	    	int n = coefficients.length;
@@ -353,7 +380,6 @@ public class MainWindowViewController implements Initializable{
 	    	try {
 		    	 double[] coefficients = getCoefficients();
 		    	 int grade = getGrade();
-		    	 
 		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
 		    	 
 		    	 world.setPolynomial(p1);
