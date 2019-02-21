@@ -13,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.Calculator;
 import model.Polynomial;
+import threads.MethodsThread;
 
 public class MainWindowViewController implements Initializable{
 
@@ -70,14 +71,12 @@ public class MainWindowViewController implements Initializable{
 	    		
 		    	 double[] coefficients = getCoefficients();
 		    	 int grade = getGrade();
-		    	// System.out.println(""+grade);
-		    	// System.out.println(""+coefficients[0]+coefficients[grade-1]);
+		    	
+		    	
 		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
 		    	 
-		    	 world.setPolynomial(p1);
-		    	 String roots=world.syntheticMethod();
-		    	 
-		    	 resultTextArea.setText(""+roots);
+		    	 MethodsThread mt=new MethodsThread(1,p1,this);
+		    	 mt.start();
 		    	 
 		    	}
 		    	catch(Exception e) {
@@ -382,16 +381,18 @@ public class MainWindowViewController implements Initializable{
 		    	 int grade = getGrade();
 		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
 		    	 
-		    	 world.setPolynomial(p1);
-		    	 String roots=world.syntheticMethod();
-		    	 
-		    	 resultTextArea.setText(""+roots);
+		    	 MethodsThread mt= new MethodsThread(2,p1,this);
+		    	mt.start();
 		    	 
 		    	}
 		    	catch(Exception e) {
 		    		JOptionPane.showMessageDialog(null, "Please input valid type of data");
 		    	}
 	    	
+	    }
+	    
+	    public void setTextArea(String  roots) {
+	    	resultTextArea.setText(""+roots);
 	    }
 
 	
