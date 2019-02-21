@@ -16,16 +16,8 @@ public class Calculator {
 
 	private Polynomial polynomial;
 	
-	public Calculator(int grade, double ...constants) {
-		polynomial = new Polynomial(grade, constants);
-	}
-	
-	public void methodNewton() {
+	public Calculator() {
 		
-		polynomial.getRootsNewton();
-	}
-	public void methodSintetic() {
-		polynomial.getRoots();
 	}
 	
 	/**
@@ -320,9 +312,10 @@ public class Calculator {
 	 * this method solves the roots of a polynomial with the strategy of newton
 	 * @return roots - the roots of the polynomial
 	 */
-	public String NewtonMethod() {
+	public String newtonMethod() {
 		String roots="";
 		
+		roots+=""+polynomial.getRootsNewton();
 		
 		return roots;
 	}
@@ -334,6 +327,7 @@ public class Calculator {
 	public String syntheticMethod() {
 		String roots="";
 		
+		roots+=""+polynomial.getRoots();
 		
 		return roots;
 	}
@@ -347,6 +341,6 @@ public class Calculator {
 	}
 	
 	
-	}
+}
 	
 
