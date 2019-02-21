@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.Calculator;
+import model.Polynomial;
 
 public class MainWindowViewController implements Initializable{
 
@@ -66,10 +67,15 @@ public class MainWindowViewController implements Initializable{
 	    void newtonClicked(ActionEvent event) {
 
 	    	try {
-		    	 int[] coefficients = getCoefficients();
+		    	 double[] coefficients = getCoefficients();
 		    	 int grade = getGrade();
 		    	 
-		    	// Polynomial p1 = new Polynomial(grade,coefficients);
+		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
+		    	 
+		    	 world.setPolynomial(p1);
+		    	 String roots=world.syntheticMethod();
+		    	 
+		    	 resultTextArea.setText(""+roots);
 		    	 
 		    	}
 		    	catch(Exception e) {
@@ -141,9 +147,9 @@ public class MainWindowViewController implements Initializable{
 	    	return grade;
 	    }
 	    
-	    public int[] getCoefficients() {
+	    public double[] getCoefficients() {
 	    	
-	    	int[] coefficients = new int[getGrade()+1];
+	    	double[] coefficients = new double[getGrade()+1];
 	    	int position=0;
 	    	int grade=getGrade();
 	    	switch(grade){
@@ -258,6 +264,19 @@ public class MainWindowViewController implements Initializable{
 	    	
 	    	return coefficients;
 	    }
+	    
+	    public double[] invertArray(double[] arrayToInvert) {
+	    	double[] invertedArray = new double[arrayToInvert.length];
+	    	
+	    	int j= arrayToInvert.length-1;
+	    	
+	    	for(int i=0;i<arrayToInvert.length;i++) {
+	    		invertedArray[i]=arrayToInvert[j];
+	    		j--;
+	    	}
+	    	
+	    	return invertedArray;
+	    }
 
 	    @FXML
 	    void ramdomClicked(ActionEvent event) {
@@ -331,6 +350,22 @@ public class MainWindowViewController implements Initializable{
 	    @FXML
 	    void syntheticClicked(ActionEvent event) {
 
+	    	try {
+		    	 double[] coefficients = getCoefficients();
+		    	 int grade = getGrade();
+		    	 
+		    	 Polynomial p1 = new Polynomial(grade,invertArray(coefficients));
+		    	 
+		    	 world.setPolynomial(p1);
+		    	 String roots=world.syntheticMethod();
+		    	 
+		    	 resultTextArea.setText(""+roots);
+		    	 
+		    	}
+		    	catch(Exception e) {
+		    		JOptionPane.showMessageDialog(null, "Please imput valid type of data");
+		    	}
+	    	
 	    }
 
 	
