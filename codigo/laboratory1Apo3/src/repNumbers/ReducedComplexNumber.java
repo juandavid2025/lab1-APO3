@@ -1,7 +1,5 @@
 package repNumbers;
-
-import numbers.rational.RationalNumber;
-import numbers.rational.ReducedRationalNumber;
+;
 
 public class ReducedComplexNumber implements ComplexNumber,Comparable<ComplexNumber>{
 

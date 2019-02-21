@@ -1,6 +1,5 @@
 package repNumbers;
 
-import numbers.rational.RationalNumber;
 
 public class CNumber implements ComplexNumber, Comparable<ComplexNumber> {
 

@@ -1,6 +1,5 @@
 package repNumbers;
 
-import numbers.rational.RationalNumber;
 
 public interface ComplexNumber {
 

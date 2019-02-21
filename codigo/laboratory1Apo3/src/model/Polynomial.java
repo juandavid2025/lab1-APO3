@@ -29,6 +29,7 @@ public class Polynomial {
     public int getGrade(){
         return grade;
     }
+   
 
     /**
      * this method 
