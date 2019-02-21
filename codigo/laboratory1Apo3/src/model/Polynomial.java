@@ -88,6 +88,19 @@ public class Polynomial {
         polynomial += (Math.floor(constants[0]*1000)/1000);
         return polynomial;
     }
+    
+    public String getRootsNewton() {
+    	Set<ComplexNumber> set = new HashSet<>();
+        while (set.size() < p1.grade){
+            set.add(p1.newtonComplexMethod());
+        }
+        for (ComplexNumber c: set
+             ) {
+            System.out.println("x = " +c);
+        }
+        System.out.println(p1.getRoots());
+    	
+    }
 
     
     //SOLUCION POR DIVISION SINTETICA
