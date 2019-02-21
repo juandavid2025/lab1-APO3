@@ -1,19 +1,21 @@
 package model;
-import numbers.imaginary.CNumber;
-import numbers.imaginary.ComplexNumber;
+import repNumbers.ComplexNumber;
+import repNumbers.CNumber;
 
 /**
  * class Polynomial
  */
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 public class Polynomial {
 	private int grade;
     private double[] constants;
 
     /**
      * constructor of Polynomial
-     * @param grade - the grade of the polunomial
-     * @param constants - the coefficients of the polinomial
+     * @param grade - the grade of the polynomial
+     * @param constants - the coefficients of the polynomial
      */
     public Polynomial(int grade, double ...constants){
         this.grade = grade;
@@ -33,6 +35,8 @@ public class Polynomial {
      * @param number
      * @return value - 
      */
+    
+    //SOLUCION NEWTON
     public double realEvaluation(double number){
         double value = 0;
         for (int i = 0; i < constants.length; i++) {
@@ -73,36 +77,6 @@ public class Polynomial {
         return root;
     }
 
-    public Polynomial multiplication(Polynomial p){
-        double[] newPolynomial = new double[grade + p.grade + 1];
-        for(int i = 0; i < p.constants.length;i++){
-            for (int j = 0; j < constants.length; j++) {
-                newPolynomial[i+j] += p.constants[i] * constants[j];
-            }
-        }
-        return new Polynomial(grade + p.grade, newPolynomial);
-    }
-
-    private int determinateGrade(double[] polynomial){
-        int i;
-        for (i = polynomial.length - 1; i >= 0 ; i++) {
-            if (polynomial[i] != 0)
-                break;
-        }
-        return i;
-    }
-
-    public Polynomial substraction(Polynomial p){
-        int size = Math.min(grade,p.grade)+1;
-        double[] newPolynomial = p.grade > grade? p.constants.clone(): constants.clone();
-        int i;
-        for (i = 0; i < size; i++) {
-            newPolynomial[i] = constants[i] - p.constants[i];
-        }
-        int newGrade = determinateGrade(newPolynomial);
-        return new Polynomial(newGrade, Arrays.copyOfRange(newPolynomial,0,newGrade+1));
-    }
-
     @Override
     public String toString() {
         String polynomial = "";
@@ -114,11 +88,60 @@ public class Polynomial {
         return polynomial;
     }
 
+    
+    //SOLUCION POR DIVISION SINTETICA
+    
+    public String getRoots(){
+        String roots = "";
+        int[] independent = exactDivisors(constants[0]);
+        int[] majorTerm = exactDivisors(constants[constants.length-1]);
+        for (int i = 0; i < independent.length; i++) {
+            for (int j = 0; j < majorTerm.length; j++) {
+                if (sinteticDivision((double)independent[i]/(double)majorTerm[j]) < 0.00000000001){
+                    roots += "x = " + independent[i] + "/" + majorTerm[j]+"\n";
+                }
+            }
+        }
+        return roots;
+    }
+    
+    private double sinteticDivision(double num){
+        double temp = constants[constants.length-1];
+        for (int i = constants.length-2; i >= 0; i--) {
+            temp = num * temp + constants[i];
+        }
+        return temp;
+    }
+
+    public int[] exactDivisors(double num){
+        String divisors = "";
+        for (int i = -((int)num+1); i < num+1; i++) {
+            if (num % i == 0){
+                divisors +=i;
+                if (i<num){
+                    divisors+=",";
+                }
+            }
+        }
+        String[] divisorsCut = divisors.split(",");
+        int[] divisorsReturn = new int[divisorsCut.length];
+        for (int i = 0; i < divisorsCut.length; i++) {
+            divisorsReturn[i] = Integer.parseInt(divisorsCut[i]);
+        }
+        return divisorsReturn;
+    }
+    
     public static void main(String ...args){
-        Polynomial p1 = new Polynomial(2,3,0,1);
-        Polynomial p2 = new Polynomial(1,-3,1);
-        Polynomial p3 = new Polynomial(1,3,1);
-        System.out.println("("+ p1 + ") * (" + p2 + ") - (" + p3 + ") = " + p1.multiplication(p2).substraction(p3));
-        System.out.println(p1.multiplication(p2).newtonComplexMethod());
+
+        Polynomial p1 = new Polynomial(2,16,8,1);
+        Set<ComplexNumber> set = new HashSet<>();
+        while (set.size() < p1.grade){
+            set.add(p1.newtonComplexMethod());
+        }
+        for (ComplexNumber c: set
+             ) {
+            System.out.println("x = " +c);
+        }
+        System.out.println(p1.getRoots());
     }
 }

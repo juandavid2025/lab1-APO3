@@ -5,7 +5,16 @@
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/ext-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/jep-2.4.1.jar"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/juand/Desktop/git lab1/lab1-APO3/codigo/laboratory1Apo3/libNumeric/RatioPlex.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/HP/git/lab1-APO3/codigo/laboratory1Apo3/libNumeric/RatioPlex.jar"/>
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="libNumeric/RatioPlex.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/juand/Desktop/git lab1/lab1-APO3/codigo/laboratory1Apo3/libNumeric/RatioPlex.jar"/>
+>>>>>>> 6139706fab97e2de17e7017f8495acfbf2c8f8d7
+>>>>>>> 248369092bcce644ca857f16c3b0e875e998d8b4
 	<classpathentry kind="output" path="bin"/>
 </classpath>
