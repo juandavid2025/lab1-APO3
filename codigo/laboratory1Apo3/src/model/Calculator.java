@@ -20,8 +20,6 @@ public class Calculator {
 		
 	}
 	
-	
-	
 	/**
 	 * this method generate random coefficients in an random array size beetwen one to 10 grade 
 	 * @return coefficients - the array of random grade with random coefficients
@@ -45,6 +43,12 @@ public class Calculator {
 		return coefficients;
 	}
 	
+	/**
+	 * 
+	 * @param function
+	 * @param function1
+	 * @param pZero
+	 */
 	public void isComplex(String function, String[] function1, double pZero) {
 		boolean complexB = false;
 		int n = 0;
@@ -299,6 +303,40 @@ public class Calculator {
 
 		return root;
 	}
+	
+	/**
+	 * this method solves the roots of a polynomial with the strategy of newton
+	 * @return roots - the roots of the polynomial
+	 */
+	public String newtonMethod() {
+		String roots="";
+		
+		roots+=""+polynomial.getRootsNewton();
+		
+		return roots;
+	}
+	
+	/**
+	 * 
+	 * @return roots - the roots of the polynomial
+	 */
+	public String syntheticMethod() {
+		String roots="";
+		
+		roots+=""+polynomial.getRoots();
+		
+		return roots;
+	}
 
+	/**
+	 * this method set the value Polynomial
+	 * @param polynomial - the new value of polynomial
+	 */
+	public void setPolynomial(Polynomial polynomial) {
+	     this.polynomial=polynomial;
+	}
+	
 	
 }
+	
+
